@@ -321,6 +321,7 @@
   background: #ffffff;
   border-radius: 16px;
   padding: 24px;
+  padding-top: 58px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   position: relative;
   overflow: hidden;
@@ -401,6 +402,7 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 2;
 }
 
 .worker-badge.promoted {
