@@ -1,0 +1,215 @@
+.recognition-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.page-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.page-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-neutral-900);
+}
+
+.page-subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-600);
+  margin-top: 0.25rem;
+}
+
+/* Reward Stats Highlights */
+.reward-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+
+.reward-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  background: #ffffff;
+  border: 1px solid var(--color-neutral-200);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.reward-stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 5px;
+}
+
+.reward-stat-card.gold::before { background-color: var(--color-accent-500); }
+.reward-stat-card.emerald::before { background-color: var(--color-success-500); }
+.reward-stat-card.blue::before { background-color: var(--color-primary-500); }
+
+.reward-stat-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.reward-stat-card.gold .reward-stat-icon {
+  background-color: var(--color-accent-100);
+  color: var(--color-accent-600);
+}
+
+.reward-stat-card.emerald .reward-stat-icon {
+  background-color: var(--color-success-100);
+  color: var(--color-success-700);
+}
+
+.reward-stat-card.blue .reward-stat-icon {
+  background-color: var(--color-info-100);
+  color: var(--color-info-700);
+}
+
+.reward-stat-info .label {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-neutral-500);
+  letter-spacing: 0.05em;
+}
+
+.reward-stat-info h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-neutral-900);
+  margin: 0.15rem 0;
+}
+
+.reward-stat-info p {
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-600);
+}
+
+/* Worker Cards Grid */
+.worker-cards-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.section-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-title-row h2 {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-neutral-800);
+}
+
+.recognition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+
+.recognition-card {
+  background: #ffffff;
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.recognition-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.card-top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.worker-avatar-large {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-accent-500), var(--color-accent-600));
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background-color: var(--color-neutral-100);
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+}
+
+.card-worker-details h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-neutral-900);
+}
+
+.detail-tag {
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-500);
+  margin-bottom: 0.5rem;
+}
+
+.skill-indicator {
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-700);
+  margin-bottom: 0.5rem;
+}
+
+.skill-label {
+  font-weight: 600;
+}
+
+.achievement-quote {
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-600);
+  background-color: var(--color-neutral-50);
+  padding: 0.65rem;
+  border-radius: var(--radius-sm);
+  line-height: 1.4;
+  border-left: 3px solid var(--color-primary-500);
+}
+
+.card-action-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-neutral-200);
+}
+

@@ -1,0 +1,183 @@
+.performance-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.performance-filter-bar {
+  display: flex;
+  gap: 1rem;
+  background-color: #ffffff;
+  padding: 1.25rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-neutral-200);
+  box-shadow: var(--shadow-sm);
+}
+
+.filter-input-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background-color: var(--color-neutral-100);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+}
+
+.filter-input-wrap:focus-within {
+  background-color: #ffffff;
+  border-color: var(--color-primary-500);
+}
+
+.filter-input-wrap input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  outline: none;
+}
+
+.filter-select-wrap select {
+  height: 40px;
+  padding: 0 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-neutral-300);
+  background-color: #ffffff;
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  outline: none;
+}
+
+/* Cards Grid */
+.performance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+
+.perf-card {
+  background: #ffffff;
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.perf-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.perf-worker-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.worker-avatar-box {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-800));
+  color: #ffffff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.perf-worker-meta h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-neutral-900);
+}
+
+.worker-subtext {
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-500);
+}
+
+.perf-score-badge {
+  background-color: var(--color-success-50);
+  color: var(--color-success-700);
+  border: 1px solid var(--color-success-100);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+}
+
+.perf-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  background-color: var(--color-neutral-50);
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+}
+
+.perf-metric {
+  display: flex;
+  flex-direction: column;
+}
+
+.perf-metric-label {
+  font-size: 0.65rem;
+  color: var(--color-neutral-500);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.perf-metric-value {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--color-neutral-900);
+  margin-top: 0.15rem;
+}
+
+.perf-progress-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.perf-progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-600);
+  font-weight: 500;
+}
+
+.perf-progress-bar {
+  background-color: var(--color-neutral-200);
+  height: 8px;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.perf-progress-fill {
+  background: linear-gradient(90deg, var(--color-primary-500), var(--color-accent-500));
+  height: 100%;
+  border-radius: var(--radius-pill);
+}
+
+.perf-card-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border-top: 1px solid var(--color-neutral-200);
+  padding-top: 1rem;
+}
+
+.perf-card-footer button {
+  flex: 1;
+}
+

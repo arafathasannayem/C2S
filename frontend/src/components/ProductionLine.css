@@ -1,0 +1,123 @@
+.production-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.production-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.lines-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.lines-section h2 {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-neutral-800);
+}
+
+.lines-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.25rem;
+}
+
+.line-card {
+  background: #ffffff;
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.line-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.line-card-header h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-neutral-900);
+}
+
+.line-type-badge {
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-500);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.line-supervisor {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-700);
+  background: var(--color-neutral-50);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+}
+
+.line-metrics-table {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  border-top: 1px solid var(--color-neutral-200);
+  border-bottom: 1px solid var(--color-neutral-200);
+  padding: 0.75rem 0;
+}
+
+.line-metric-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.line-metric-col .col-label {
+  font-size: 0.65rem;
+  color: var(--color-neutral-500);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.line-metric-col .col-val {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--color-neutral-900);
+  margin-top: 0.15rem;
+}
+
+.line-pace-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.pace-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-600);
+}
+
+.line-card-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.line-card-actions button {
+  flex: 1;
+}
+
