@@ -42,46 +42,15 @@ const ROLE_PERMISSIONS = {
     '/performance',
     '/attendance',
     '/production',
-    '/job-sequencing',
     '/inventory',
-    '/quality-control',
-    '/waste',
-    '/machines',
   ],
   qc_inspector: [
     '/dashboard',
-    '/rewards',
-    '/performance',
-    '/attendance',
-    '/production',
-    '/job-sequencing',
-    '/inventory',
     '/quality-control',
     '/waste',
-    '/machines',
   ],
   maintenance_staff: [
     '/dashboard',
-    '/rewards',
-    '/performance',
-    '/attendance',
-    '/production',
-    '/job-sequencing',
-    '/inventory',
-    '/quality-control',
-    '/waste',
-    '/machines',
-  ],
-  auditor: [
-    '/dashboard',
-    '/rewards',
-    '/performance',
-    '/attendance',
-    '/production',
-    '/job-sequencing',
-    '/inventory',
-    '/quality-control',
-    '/waste',
     '/machines',
   ],
   worker: [
@@ -118,7 +87,6 @@ function App() {
     if (allowedRoles.includes(role)) {
       return children;
     }
-    // Redirect to the first allowed page for this role
     const allowedPages = ROLE_PERMISSIONS[role] || ['/dashboard'];
     return <Navigate to={allowedPages[0]} />;
   };
@@ -134,22 +102,24 @@ function App() {
       <Routes>
         <Route path="/login" element={<LoginPage />} />
 
-        {/* Admin-only routes */}
+        {/* All management roles */}
         <Route
           path="/dashboard"
           element={
             <ProtectedRoute>
-              <RoleRestrictedRoute allowedRoles={['admin', 'line_manager', 'qc_inspector', 'maintenance_staff', 'auditor']}>
+              <RoleRestrictedRoute allowedRoles={['admin', 'line_manager', 'qc_inspector', 'maintenance_staff']}>
                 <Dashboard />
               </RoleRestrictedRoute>
             </ProtectedRoute>
           }
         />
+
+        {/* Admin + Line Manager */}
         <Route
           path="/rewards"
           element={
             <ProtectedRoute>
-              <RoleRestrictedRoute allowedRoles={['admin', 'line_manager', 'qc_inspector', 'maintenance_staff', 'auditor']}>
+              <RoleRestrictedRoute allowedRoles={['admin', 'line_manager']}>
                 <WorkerRecognition />
               </RoleRestrictedRoute>
             </ProtectedRoute>
@@ -159,7 +129,7 @@ function App() {
           path="/performance"
           element={
             <ProtectedRoute>
-              <RoleRestrictedRoute allowedRoles={['admin', 'line_manager', 'qc_inspector', 'maintenance_staff', 'auditor']}>
+              <RoleRestrictedRoute allowedRoles={['admin', 'line_manager']}>
                 <WorkerPerformance />
               </RoleRestrictedRoute>
             </ProtectedRoute>
@@ -169,30 +139,20 @@ function App() {
           path="/attendance"
           element={
             <ProtectedRoute>
-              <RoleRestrictedRoute allowedRoles={['admin', 'line_manager', 'qc_inspector', 'maintenance_staff', 'auditor']}>
+              <RoleRestrictedRoute allowedRoles={['admin', 'line_manager']}>
                 <Attendance />
               </RoleRestrictedRoute>
             </ProtectedRoute>
           }
         />
 
-        {/* Manufacturing routes (NOT for admin) */}
+        {/* Line Manager only */}
         <Route
           path="/production"
           element={
             <ProtectedRoute>
-              <RoleRestrictedRoute allowedRoles={['line_manager', 'qc_inspector', 'maintenance_staff', 'auditor']}>
+              <RoleRestrictedRoute allowedRoles={['line_manager']}>
                 <ProductionLine />
-              </RoleRestrictedRoute>
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/job-sequencing"
-          element={
-            <ProtectedRoute>
-              <RoleRestrictedRoute allowedRoles={['line_manager', 'qc_inspector', 'maintenance_staff', 'auditor']}>
-                <JobSequencing />
               </RoleRestrictedRoute>
             </ProtectedRoute>
           }
@@ -201,17 +161,19 @@ function App() {
           path="/inventory"
           element={
             <ProtectedRoute>
-              <RoleRestrictedRoute allowedRoles={['line_manager', 'qc_inspector', 'maintenance_staff', 'auditor']}>
+              <RoleRestrictedRoute allowedRoles={['line_manager']}>
                 <Inventory />
               </RoleRestrictedRoute>
             </ProtectedRoute>
           }
         />
+
+        {/* QC Inspector only */}
         <Route
           path="/quality-control"
           element={
             <ProtectedRoute>
-              <RoleRestrictedRoute allowedRoles={['line_manager', 'qc_inspector', 'maintenance_staff', 'auditor']}>
+              <RoleRestrictedRoute allowedRoles={['qc_inspector']}>
                 <QualityControl />
               </RoleRestrictedRoute>
             </ProtectedRoute>
@@ -221,24 +183,26 @@ function App() {
           path="/waste"
           element={
             <ProtectedRoute>
-              <RoleRestrictedRoute allowedRoles={['line_manager', 'qc_inspector', 'maintenance_staff', 'auditor']}>
+              <RoleRestrictedRoute allowedRoles={['qc_inspector']}>
                 <WasteTracking />
               </RoleRestrictedRoute>
             </ProtectedRoute>
           }
         />
+
+        {/* Maintenance Staff only */}
         <Route
           path="/machines"
           element={
             <ProtectedRoute>
-              <RoleRestrictedRoute allowedRoles={['line_manager', 'qc_inspector', 'maintenance_staff', 'auditor']}>
+              <RoleRestrictedRoute allowedRoles={['maintenance_staff']}>
                 <MachineMaintenance />
               </RoleRestrictedRoute>
             </ProtectedRoute>
           }
         />
 
-        {/* Admin-only routes */}
+        {/* Admin only */}
         <Route
           path="/safety"
           element={
